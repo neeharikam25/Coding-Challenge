@@ -7,7 +7,8 @@ import javax.persistence.*;
 public class BookUser {
     @Id
     private int book_id;
-    @Id
+
+    @EmbeddedId
     private int user_id;
 
     public BookUser() {
