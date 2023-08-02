@@ -56,6 +56,11 @@ public class UserHandler {
 
     public User getUserByName(String UserName )
     {
+<<<<<<< HEAD
+        User UserToFind = new User();
+        UserToFind.setName(UserName);
+=======
+>>>>>>> 57975b44f9fbc0a0521dcc7e9a6f1d4dcad4aa54
         List<User> User = UserRepository.findByName(UserName);
         User result = null;
 

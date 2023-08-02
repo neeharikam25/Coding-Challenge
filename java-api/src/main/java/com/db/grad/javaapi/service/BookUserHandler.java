@@ -51,9 +51,10 @@ public class BookUserHandler {
     }
 
 
-    public BookUser getBookUserById(int BookUserId )
+
+    public BookUser getBookUserById(int id )
     {
-        List<BookUser> BookUser = BookUserRepository.findByIdd(BookUserId);
+        List<BookUser> BookUser = BookUserRepository.findByIdd(id);
         BookUser result = null;
 
         if( BookUser.size() == 1)
