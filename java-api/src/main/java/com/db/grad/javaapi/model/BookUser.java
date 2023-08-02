@@ -4,21 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "bookuser")
-@IdClass(BookUserId.class)
 public class BookUser {
     @Id
     private int bookuser_id;
 
     private int book_id;
 
-<<<<<<< HEAD
-    @Id
-=======
-<<<<<<< HEAD
-=======
-    @EmbeddedId
->>>>>>> 57975b44f9fbc0a0521dcc7e9a6f1d4dcad4aa54
->>>>>>> b59bc039bb464a8fefac917ffefd87fab0ed16ef
     private int user_id;
 
     public BookUser() {
