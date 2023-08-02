@@ -16,3 +16,8 @@ INSERT INTO BookUser ( book_id, user_id) VALUES ( 4, 1);
 INSERT INTO BookUser ( book_id, user_id) VALUES ( 1, 2);
 INSERT INTO BookUser ( book_id, user_id) VALUES ( 2, 2);
 INSERT INTO BookUser ( book_id, user_id) VALUES ( 3, 2);
+
+INSERT INTO Security(security_id,isin,cusip,issuer_name,coupon,security_type,face_value,security_currency,security_status,book_id) VALUES (1,'XS1988387210',NULL,'BNPParibasIssu 4,37% Microsoft Corp (USD)',437,'CORP',1000,'USD','active',1);
+INSERT INTO Security(security_id,isin,cusip,issuer_name,coupon,security_type,face_value,security_currency,security_status,book_id) VALUES (2,'USN0280EAR64','123456780','Airbus 3.15%  USD',315,'CORP',900,'USD','active',2);
+INSERT INTO Security(security_id,isin,cusip,issuer_name,coupon,security_type,face_value,security_currency,security_status,book_id) VALUES (3,'A12356111','123456bh0','UBS Facebook (USD)',2,'CORP',900,'USD','active',3);
+
