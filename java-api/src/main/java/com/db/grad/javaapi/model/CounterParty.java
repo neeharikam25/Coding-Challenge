@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class CounterParty
 {
     @Id
-    private long counterparty_id;
+    private int counterparty_id;
     private String name;
 
     @Id
@@ -19,7 +19,7 @@ public class CounterParty
         return counterparty_id;
     }
 
-    public void setCounterparty_id(long counterparty_id) {
+    public void setCounterparty_id(int counterparty_id) {
         this.counterparty_id = counterparty_id;
     }
 

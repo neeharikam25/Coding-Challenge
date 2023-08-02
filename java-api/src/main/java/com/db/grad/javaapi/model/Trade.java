@@ -12,15 +12,15 @@ import java.util.Date;
 public class Trade
 {
     @Id
-    private long trade_id;
+    private int trade_id;
     private String currency;
 
     private String status;
 
     private String type;
-    private int quantity;
+    private float quantity;
 
-    private int unit_price;
+    private float unit_price;
 
     private Date trade_settlement_date;
 
@@ -35,7 +35,7 @@ public class Trade
         return trade_id;
     }
 
-    public void setTrade_id(long trade_id) {
+    public void setTrade_id(int trade_id) {
         this.trade_id = trade_id;
     }
 
@@ -67,20 +67,20 @@ public class Trade
     }
 
     @Column(name = "quantity", nullable = false)
-    public int getQuantity() {
+    public float getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(float quantity) {
         this.quantity = quantity;
     }
 
     @Column(name = "unit_price", nullable = false)
-    public int getUnit_price() {
+    public float getUnit_price() {
         return unit_price;
     }
 
-    public void setUnit_price(int unit_price) {
+    public void setUnit_price(float unit_price) {
         this.unit_price = unit_price;
     }
 
