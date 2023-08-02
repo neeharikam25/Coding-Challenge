@@ -58,7 +58,7 @@ public class UserHandler {
     {
         User UserToFind = new User();
         UserToFind.setName(UserName);
-        List<User> User = UserRepository.findByName(UserToFind);
+        List<User> User = UserRepository.findByName(UserName);
         User result = null;
 
         if( User.size() == 1)

@@ -6,8 +6,10 @@ import javax.persistence.*;
 @Table(name = "bookuser")
 public class BookUser {
     @Id
+    private int bookuser_id;
+
     private int book_id;
-    @Id
+
     private int user_id;
 
     public BookUser() {
@@ -16,6 +18,15 @@ public class BookUser {
     public BookUser(int book_id, int user_id) {
         this.book_id = book_id;
         this.user_id = user_id;
+    }
+
+    @Column(name = "bookuser_id", nullable = false)
+    public int getBookuser_id() {
+        return bookuser_id;
+    }
+
+    public void setBookuser_id(int bookuser_id) {
+        this.bookuser_id = bookuser_id;
     }
 
     @Column(name = "book_id", nullable = false)
