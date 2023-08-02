@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SecurityRepository extends JpaRepository<Security, Long> {
     @Query(nativeQuery = true, value = "select * from security where book_id = :id")
-    Security findSecurityByBookId(int bookId);
+    Security findSecurityByBookId(int id);
 }
 
