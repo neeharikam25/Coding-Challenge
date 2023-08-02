@@ -4,11 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "bookuser")
+@IdClass(BookUserId.class)
 public class BookUser {
     @Id
     private int book_id;
 
-    @EmbeddedId
+    @Id
     private int user_id;
 
     public BookUser() {
