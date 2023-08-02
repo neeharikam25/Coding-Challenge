@@ -25,24 +25,24 @@ public class UserController {
         UserService = ds;
     }
 
-    @GetMapping("/User")
+    @GetMapping("/user")
     public List<User> getAllUser() {
         return UserService.getAllUser();
     }
 
-    @GetMapping("/User/{id}")
+    @GetMapping("/user/{id}")
     public ResponseEntity< User > getEmployeeById(@PathVariable(value = "id") Long id)
             throws ResourceNotFoundException {
         User User = UserService.gettheUserById(id);
         return ResponseEntity.ok().body(User);
     }
 
-    @PostMapping("/User")
+    @PostMapping("/user")
     public User createUser(@Valid @RequestBody User User) {
         return UserService.addUser(User);
     }
 
-    @PutMapping("/User/{id}")
+    @PutMapping("/user/{id}")
     public ResponseEntity < User > updateUser(@PathVariable(value = "id") Long id,
                                               @Valid @RequestBody User UserDetails) throws ResourceNotFoundException {
 
@@ -50,7 +50,7 @@ public class UserController {
         return ResponseEntity.ok(updatedUser);
     }
 
-    @DeleteMapping("/User/{id}")
+    @DeleteMapping("/user/{id}")
     public Map< String, Boolean > deleteUser(@PathVariable(value = "id") Long id)
             throws ResourceNotFoundException {
         boolean removed = UserService.removeUser(id);

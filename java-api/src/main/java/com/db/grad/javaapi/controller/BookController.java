@@ -24,24 +24,24 @@ public class BookController {
         BookService = ds;
     }
 
-    @GetMapping("/Book")
+    @GetMapping("/book")
     public List<Book> getAllBook() {
         return BookService.getAllBook();
     }
 
-    @GetMapping("/Book/{id}")
+    @GetMapping("/book/{id}")
     public ResponseEntity< Book > getEmployeeById(@PathVariable(value = "id") Long id)
             throws ResourceNotFoundException {
         Book Book = BookService.getBookById(id);
         return ResponseEntity.ok().body(Book);
     }
 
-    @PostMapping("/Book")
+    @PostMapping("/book")
     public Book createBook(@Valid @RequestBody Book Book) {
         return BookService.addBook(Book);
     }
 
-    @PutMapping("/Book/{id}")
+    @PutMapping("/book/{id}")
     public ResponseEntity < Book > updateBook(@PathVariable(value = "id") Long id,
                                             @Valid @RequestBody Book BookDetails) throws ResourceNotFoundException {
 
@@ -49,7 +49,7 @@ public class BookController {
         return ResponseEntity.ok(updatedBook);
     }
 
-    @DeleteMapping("/Book/{id}")
+    @DeleteMapping("/book/{id}")
     public Map< String, Boolean > deleteBook(@PathVariable(value = "id") Long id)
             throws ResourceNotFoundException {
         boolean removed = BookService.removeBook(id);
