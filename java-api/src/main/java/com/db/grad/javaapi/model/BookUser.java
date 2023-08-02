@@ -10,6 +10,10 @@ public class BookUser {
 
     private int book_id;
 
+<<<<<<< HEAD
+=======
+    @EmbeddedId
+>>>>>>> 57975b44f9fbc0a0521dcc7e9a6f1d4dcad4aa54
     private int user_id;
 
     public BookUser() {
