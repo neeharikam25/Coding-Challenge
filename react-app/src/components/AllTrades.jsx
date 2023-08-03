@@ -5,7 +5,7 @@ import { useState, useEffect} from 'react'
 import { getAllTrades } from '../services/TradeServices'
 import { Link, useNavigate,useLocation,useParams } from 'react-router-dom';
 
-const AllTrades = (id) => {
+const AllTrades = () => {
 
 const { state } = useLocation();
 const [trades,setTrades] = useState([]);
@@ -16,7 +16,7 @@ useEffect(()=>{
 );
 
 const getTradesFromAPI = ()=>{
-  getAllTrades(id)
+  getAllTrades(state.securityId)
   .then(res => {
       setTrades(res.data);
   })
@@ -28,7 +28,7 @@ const getTradesFromAPI = ()=>{
     
         return (
           <>
-          <h1> Total count is: {trades.length}</h1>
+          <h1> See trades</h1>
           <div className='list-bonds'>
            <div className='bonds-center'>
             <Row className='bond-column'>

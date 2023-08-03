@@ -18,7 +18,7 @@ const TradeDetails = (props ) => {
   
 
   return (
-    <Card >
+    <Card id='bond'>
 
     <Card.Body >
     <Card.Title >Trade</Card.Title>

@@ -5,7 +5,7 @@ import { useState,useEffect } from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { getAllBonds } from '../services/BondServices'
-import { Navigate } from 'react-router-dom';
+import { Navigate,useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -24,6 +24,7 @@ const BondDetails = (props ) => {
   const functie=()=>{
     console.log(props.info.securityId);
   }
+const navigate=useNavigate();
 
   return (
     <Card id='bond'>
@@ -46,7 +47,15 @@ const BondDetails = (props ) => {
         
       </Row>
       
-    <Button id='btnn' ><Link to='/seeTrades' data={props.info.securityId} ></Link>Show trades</Button>
+    <Button
+        id='btnn'
+        onClick={() => {
+          // Navigate to '/seeTrades' with the 'securityId' as a parameter
+          navigate('/seeTrades', { state: { securityId: props.info.securityId } });
+        }}
+      >
+        Show trades
+      </Button>
     </Card.Body>
   </Card>
   )
