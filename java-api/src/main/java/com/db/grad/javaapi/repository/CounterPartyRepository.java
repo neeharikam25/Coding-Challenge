@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface CounterPartyRepository extends JpaRepository<CounterParty, Long>
 {
-    @Query(nativeQuery = true, value = "select * from counter_party where name = :name")
+    @Query(nativeQuery = true, value = "select * from counterparty where name = :name")
     List<CounterParty> findByName(String name);
 }

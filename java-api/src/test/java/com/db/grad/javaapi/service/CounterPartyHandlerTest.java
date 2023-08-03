@@ -82,7 +82,8 @@ public class CounterPartyHandlerTest
         CounterParty uniqueCounterParty = cut.addCP( theCounterParty );
 
         Optional<CounterParty> opt = Optional.of(theCounterParty);
-        Mockito.when(itsCounterPartysRepo.findById(theCounterParty.getCounterparty_id())).thenReturn(opt);
+        Long l= (long) theCounterParty.getCounterparty_id();
+        Mockito.when(itsCounterPartysRepo.findById(l)).thenReturn(opt);
 
         long expectedResult = 0;
         boolean expectedStatus = true;
@@ -145,7 +146,7 @@ public class CounterPartyHandlerTest
 
         CounterParty jpaCounterParty = addedCounterParty;
         Optional<CounterParty> opt = Optional.of(addedCounterParty);
-        Mockito.when(itsCounterPartysRepo.findById(addedCounterParty.getCounterparty_id())).thenReturn(opt);
+        Mockito.when(itsCounterPartysRepo.findById((long)addedCounterParty.getCounterparty_id())).thenReturn(opt);
 
         // act
         CounterParty actualResult = cut.getCPById( addedCounterParty.getCounterparty_id() );

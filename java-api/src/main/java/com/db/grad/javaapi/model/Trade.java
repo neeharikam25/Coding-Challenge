@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "trades")
+@Table(name = "trade")
 public class Trade
 {
     @Id
@@ -31,7 +31,7 @@ public class Trade
 
 @Id
 @Column(name = "trade_id", nullable = false)
-    public long getTrade_id() {
+    public int getTrade_id() {
         return trade_id;
     }
 

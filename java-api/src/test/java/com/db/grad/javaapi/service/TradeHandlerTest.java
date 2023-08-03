@@ -83,7 +83,7 @@ public class TradeHandlerTest
         Trade uniqueTrade = cut.addTrade( theTrade );
 
         Optional<Trade> opt = Optional.of(theTrade);
-        Mockito.when(itsTradesRepo.findById(theTrade.getTrade_id())).thenReturn(opt);
+        Mockito.when(itsTradesRepo.findById((long)theTrade.getTrade_id())).thenReturn(opt);
 
         long expectedResult = 0;
         boolean expectedStatus = true;
@@ -146,7 +146,7 @@ public class TradeHandlerTest
 
         Trade jpaTrade = addedTrade;
         Optional<Trade> opt = Optional.of(addedTrade);
-        Mockito.when(itsTradesRepo.findById(addedTrade.getTrade_id())).thenReturn(opt);
+        Mockito.when(itsTradesRepo.findById((long)addedTrade.getTrade_id())).thenReturn(opt);
 
         // act
         Trade actualResult = cut.getTradeById( addedTrade.getTrade_id() );

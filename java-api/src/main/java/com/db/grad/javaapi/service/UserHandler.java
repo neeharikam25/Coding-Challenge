@@ -18,7 +18,7 @@ public class UserHandler {
     @Autowired
     public UserHandler( UserRepository UserRepository )
     {
-        UserRepository = UserRepository;
+        this.UserRepository = UserRepository;
     }
 
     public List<User> getAllUser()

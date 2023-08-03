@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "counter_party")
+@Table(name = "counterparty")
 public class CounterParty
 {
     @Id
@@ -15,7 +15,7 @@ public class CounterParty
 
     @Id
     @Column(name = "counterparty_id", nullable = false)
-    public long getCounterparty_id() {
+    public int getCounterparty_id() {
         return counterparty_id;
     }
 
