@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+#back_button {
+  width: fit-content;
+  white-space: nowrap;
+}
+
+#signout_button {
+  margin-right: 10%;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+#navbar_buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-right: 10%;
+  width: fit-content;
+}
+
+.navbar-text {
+  font-size: 24px;
+}
+
+.navbar-brand {
+  font-size: 40px !important;
+}
