@@ -18,7 +18,7 @@ public class TradeHandler
     @Autowired
     public TradeHandler( TradeRepository tradeRepo )
     {
-        itsTradesRepo = tradeRepo;
+        this.itsTradesRepo = tradeRepo;
     }
 
 
