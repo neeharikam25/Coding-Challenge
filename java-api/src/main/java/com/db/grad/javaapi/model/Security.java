@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "security")
@@ -21,7 +21,7 @@ public class Security {
     private float faceValue;
     private String securityCurrency;
     private String securityStatus;
-    private Date bondMaturityDate;
+    private LocalDate bondMaturityDate;
 
     private int bookId;
 
@@ -108,11 +108,11 @@ public class Security {
     }
 
     @Column(name = "bond_maturity_date", nullable = false)
-    public Date getBondMaturityDate() {
+    public LocalDate getBondMaturityDate() {
         return bondMaturityDate;
     }
 
-    public void setBondMaturityDate(Date bondMaturityDate) {
+    public void setBondMaturityDate(LocalDate bondMaturityDate) {
         this.bondMaturityDate = bondMaturityDate;
     }
 
