@@ -27,7 +27,6 @@ const getBondsFromAPI = ()=>{
     
         return (
           <>
-          <h1> Total count is: {bonds.length}</h1>
           <div className='list-bonds'>
            <div className='bonds-center'>
             <Row className='bond-column'>

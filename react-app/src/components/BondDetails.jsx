@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 const BondDetails = (props ) => {
-  const[counter, setCounter] = useState(0);
+
  
   const [ok,setOk]=useState(false)
   
