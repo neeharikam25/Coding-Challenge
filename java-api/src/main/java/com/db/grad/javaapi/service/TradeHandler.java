@@ -61,17 +61,18 @@ public class TradeHandler
     }
 
 
-    public Trade getTradeBySecurity(int id )
+    public List<Trade> getTradeBySecurity(int id )
     {
         Trade tradeToFind = new Trade();
         tradeToFind.setSecurity_id(id);
         List<Trade> trades = itsTradesRepo.findBySecurityId(id);
-        Trade result = null;
-
-        if( trades.size() == 1)
-            result = trades.get(0);
-
-        return result;
+//        Trade result = null;
+//
+//        if( trades.size() == 1)
+//            result = trades.get(0);
+//
+//        return result;
+        return trades;
     }
 
 

@@ -37,10 +37,10 @@ public class TradesController {
     }
 
     @GetMapping("/trades/security/{id}")
-    public ResponseEntity< Trade > getTradeBySecurityId(@PathVariable(value = "id") int id)
+    public List< Trade > getTradeBySecurityId(@PathVariable(value = "id") int id)
             throws ResourceNotFoundException {
-        Trade trades = tradesService.getTradeBySecurity(id);
-        return ResponseEntity.ok().body(trades);
+        List<Trade> trades = tradesService.getTradeBySecurity(id);
+        return trades;
     }
     @PostMapping("/trades")
     public Trade createTrade(@Valid @RequestBody Trade trade) {
