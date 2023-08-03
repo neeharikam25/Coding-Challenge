@@ -23,6 +23,8 @@ const Navigation = () => {
   console.log(activeUrl);
 
   return (
+    <div className="App">
+    {activeUrl!=="/"?<>
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         {/* <Card.Text
@@ -45,9 +47,9 @@ const Navigation = () => {
           <Button id="signout_button"> Sign out </Button>
 
           {/* add the second button ( Go back to Main Page ) only if we are not in the main page */}
-          {activeUrl !== "/" ? (
+          {activeUrl !== "/allBonds" ? (
             <Button id="back_button"   onClick={() => {
-              navigate('/');
+              navigate('/allBonds');
             }}> Back to Main Page </Button>
           ) : (
             <></>
@@ -55,6 +57,12 @@ const Navigation = () => {
         </div>
       </Container>
     </Navbar>
+    </>
+    :
+    <>
+    </>
+    }
+    </div>
   );
 };
 

@@ -13,12 +13,13 @@ import Login from './components/Login'
 function App() {
   return (
     <>
-     <Navigation></Navigation>
+    <Navigation></Navigation>
         <Routes>
         <Route path="/" element={<Login/>} />
+
           <Route path="/allbonds" element={<AllBonds/>} />
-          
           <Route path='/seeTrades' element={<AllTrades/>}/>
+  
         </Routes>
       
     </>
