@@ -44,7 +44,9 @@ const Navigation = () => {
         <Navbar.Brand href="/">My Bonds App</Navbar.Brand>
 
         <div id="navbar_buttons">
-          <Button id="signout_button"> Sign out </Button>
+          <Button id="signout_button" onClick={() => {
+              navigate('/');
+            }}> Sign out </Button>
 
           {/* add the second button ( Go back to Main Page ) only if we are not in the main page */}
           {activeUrl !== "/allBonds" ? (

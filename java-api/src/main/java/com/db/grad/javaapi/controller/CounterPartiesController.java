@@ -39,6 +39,14 @@ public class CounterPartiesController {
         return ResponseEntity.ok().body(trades);
     }
 
+    @GetMapping("/counterparties/name/{id}")
+    public String getCPNameById(@PathVariable(value = "id") int id)
+            throws ResourceNotFoundException {
+        String trades = cpService.getCPName(id);
+        return trades;
+    }
+
+
     @PostMapping("/counterparties")
     public CounterParty createCP(@Valid @RequestBody CounterParty trade) {
         return cpService.addCP(trade);

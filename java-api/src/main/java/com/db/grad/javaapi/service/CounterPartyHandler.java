@@ -76,6 +76,18 @@ public class CounterPartyHandler
 
         return result;
     }
+    public String getCPName(int id )
+    {
+        CounterParty tradeToFind = new CounterParty();
+        tradeToFind.setCounterparty_id(id);
+        List<String> trades = itsCPRepo.findName(id);
+        String result = null;
+
+        if( trades.size() == 1)
+            result = trades.get(0);
+
+        return result;
+    }
 
 
     public CounterParty updateCPDetails(CounterParty tradeToUpdate)

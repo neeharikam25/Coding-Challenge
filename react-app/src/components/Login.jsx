@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Navigate,useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [data, setData] = useState({
@@ -30,7 +31,7 @@ const Login = () => {
       }
     }
   };
-
+  const navigate=useNavigate();
   return (
     <div id="login">
       <h1>Log In</h1>
@@ -55,8 +56,9 @@ const Login = () => {
         />
         {error && <div className="errorSquare">{error}</div>}
         <div id="buttons">
-          <button type="submit">Log In</button>
-          <Link to="/register">Register</Link>
+          <button type="submit" onClick={() => {
+              navigate('/allBonds');
+            }}>Log In</button>
         </div>
       </form>
     </div>

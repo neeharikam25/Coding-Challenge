@@ -30,7 +30,7 @@ const navigate=useNavigate();
     <Card id='bond'>
 
     <Card.Body >
-    <Card.Title className='cardHover' >Bond</Card.Title>
+    <Card.Title className='cardHover' >Bond {props.info.securityId}</Card.Title>
       <Card.Title >Maturity date: {props.info.bondMaturityDate}</Card.Title>
       
       <Row className='category-bold'>
@@ -39,7 +39,7 @@ const navigate=useNavigate();
         <><Col><Card.Text >ISIN: {props.info.isin}</Card.Text > </Col>
         <Col><Card.Text >CUSIP: {props.info.cusip}</Card.Text > </Col>
         <Col><Card.Text >ISSUER: {props.info.issuerName}</Card.Text > </Col>
-        <Col><Card.Text >ID: {props.info.securityId}</Card.Text > </Col></>
+     </>
         
         :
         <>
