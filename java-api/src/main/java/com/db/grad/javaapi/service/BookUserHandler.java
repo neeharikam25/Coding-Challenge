@@ -16,7 +16,7 @@ public class BookUserHandler {
     @Autowired
     public BookUserHandler( BookUserRepository BookUserRepository )
     {
-        BookUserRepository = BookUserRepository;
+        this.BookUserRepository = BookUserRepository;
     }
     public List<BookUser> getAllBookUser()
     {
@@ -45,11 +45,11 @@ public class BookUserHandler {
         return  result;
     }
 
+
     public BookUser getBookUserById(long uniqueId)
     {
         return BookUserRepository.findById(uniqueId).get();
     }
-
 
 
     public BookUser getBookUserById(int id )

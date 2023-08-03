@@ -14,7 +14,7 @@ public class BookHandler {
     @Autowired
     public BookHandler( BookRepository BookRepository )
     {
-        BookRepository = BookRepository;
+        this.BookRepository = BookRepository;
     }
 
     public List<Book> getAllBook()
