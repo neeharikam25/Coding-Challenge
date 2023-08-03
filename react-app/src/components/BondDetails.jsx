@@ -45,14 +45,14 @@ const BondDetails = (props ) => {
   }
 
   return (
-    <Card className='bond'>
+    <Card id='bond'>
 
     <Card.Body >
     <Card.Title className='cardHover' >Bond</Card.Title>
       <Card.Title >Maturity date: {props.info.bondMaturityDate}</Card.Title>
       
       <Row className='category-bold'>
-        <Col><Button className='btn' style={{backgroundColor:'#0a0a23'}} onClick={()=>{showMore()}}>{ok==false? "Show more" : "Show less"}</Button></Col>
+        <Col><Button id='btnn'  onClick={()=>{showMore()}}>{ok==false? "Show more" : "Show less"}</Button></Col>
         {ok==true ?
         <><Col><Card.Text >ISIN: {props.info.isin}</Card.Text > </Col>
         <Col><Card.Text >CUSIP: {props.info.cusip}</Card.Text > </Col>
@@ -63,7 +63,7 @@ const BondDetails = (props ) => {
         
       </Row>
       
-    <Button className="btn" onClick={()=>{navig(props.info.securityId)}}>Show trades</Button>
+    <Button id='btnn' >Show trades</Button>
     </Card.Body>
   </Card>
   )

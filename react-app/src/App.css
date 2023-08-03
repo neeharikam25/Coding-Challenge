@@ -5,7 +5,7 @@
   }
 }
 
-.bond {
+#bond {
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
@@ -28,6 +28,19 @@
 
 
 .btn {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color:#0a0a23;
+  border: 2px solid #d8e4d4;
+  color: #fff;
+  
+}
+
+#btnn {
   font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: space-evenly;
