@@ -22,12 +22,13 @@ CREATE TABLE Book (
 );
 
 CREATE TABLE BookUser (
+    bookuser_id INT NOT NULL,
     book_id INT NOT NULL,
     user_id INT NOT NULL,
 
     FOREIGN KEY (book_id) REFERENCES Book(book_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    PRIMARY KEY ( book_id, user_id)
+    PRIMARY KEY ( bookuser_id)
 );
 
 CREATE TABLE Security (
@@ -41,6 +42,7 @@ CREATE TABLE Security (
     face_value FLOAT NOT NULL,
     security_currency VARCHAR(10) NOT NULL,
     security_status VARCHAR(10) NOT NULL,
+    bond_maturity_date DATE NOT NULL,
     book_id INT NOT NULL,
 
 
