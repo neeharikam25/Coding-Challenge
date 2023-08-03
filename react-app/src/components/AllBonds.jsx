@@ -32,7 +32,7 @@ const getBondsFromAPI = ()=>{
            <div className='bonds-center'>
             <Row className='bond-column'>
               {bonds.map(bond => (
-                  <div className='container' key={bond.bond_id}>
+                  <div className='container' key={bond.securityId}>
                     <BondDetails info={bond}  />
                   </div>
                 ))}

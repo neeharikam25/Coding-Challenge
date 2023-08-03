@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import AllBonds from "./components/AllBonds";
+import AllTrades from "./components/AllTrades"
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
 
       
         <Routes>
-          <Route path="allbonds" element={<AllBonds/>} />
+          <Route path="/allbonds" element={<AllBonds/>} />
           <Route path="/" element={<AllBonds/>} />
+          <Route path='/seeTrades' element={<AllTrades/>}/>
         </Routes>
       
     </>

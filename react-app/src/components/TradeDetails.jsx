@@ -9,7 +9,7 @@ import { getAllTrades } from '../services/TradeServices'
 
 
 
-const BondDetails = (props ) => {
+const TradeDetails = (props ) => {
   const[counter, setCounter] = useState(0);
  
  
@@ -18,7 +18,7 @@ const BondDetails = (props ) => {
   
 
   return (
-    <Card className='bond'>
+    <Card >
 
     <Card.Body >
     <Card.Title >Trade</Card.Title>
@@ -33,4 +33,4 @@ const BondDetails = (props ) => {
   )
 }
 
-export default BondDetails
+export default TradeDetails

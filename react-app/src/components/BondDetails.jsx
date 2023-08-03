@@ -6,42 +6,23 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { getAllBonds } from '../services/BondServices'
 import { Navigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 
 
 const BondDetails = (props ) => {
   const[counter, setCounter] = useState(0);
-//   useEffect(()=>{
-//     getDogFromAPI();}, 
-//     []
-//   );
  
-
   const [ok,setOk]=useState(false)
   
-  /*
-  const getDogFromAPI = (arg)=>{
-    getOwner(arg)
-    .then(res => {
-        setOwner(res.data);
-        console.log(res.data)
-        setOk(true)
-    })
-    .catch(err => {
-        
-        console.log(err);
-    })
-  }*/
-
   const showMore=()=>
   {
     console.log(props.info.bondMaturityDate);
     setOk(!ok);
   }
 
-  const navig=()=>{
-
+  const functie=()=>{
+    console.log(props.info.securityId);
   }
 
   return (
@@ -56,14 +37,16 @@ const BondDetails = (props ) => {
         {ok==true ?
         <><Col><Card.Text >ISIN: {props.info.isin}</Card.Text > </Col>
         <Col><Card.Text >CUSIP: {props.info.cusip}</Card.Text > </Col>
-        <Col><Card.Text >ISSUER: {props.info.issuerName}</Card.Text > </Col></>
+        <Col><Card.Text >ISSUER: {props.info.issuerName}</Card.Text > </Col>
+        <Col><Card.Text >ID: {props.info.securityId}</Card.Text > </Col></>
+        
         :
         <>
         </>}
         
       </Row>
       
-    <Button id='btnn' >Show trades</Button>
+    <Button id='btnn' ><Link to='/seeTrades' data={props.info.securityId} ></Link>Show trades</Button>
     </Card.Body>
   </Card>
   )
