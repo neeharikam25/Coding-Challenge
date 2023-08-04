@@ -38,10 +38,10 @@ public class UserController {
     }
 
     @GetMapping("/user/email/{id}")
-    public Integer getUserIdByEmail(@PathVariable(value = "id") String id)
+    public ResponseEntity<Integer> getUserIdByEmail(@PathVariable(value = "id") String id)
             throws ResourceNotFoundException {
         Integer User = UserService.getUserIdByEmail(id);
-        return User;
+        return ResponseEntity.ok(User);
     }
 
     @PostMapping("/user")

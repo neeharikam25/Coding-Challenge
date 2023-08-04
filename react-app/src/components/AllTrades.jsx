@@ -32,11 +32,14 @@ const getTradesFromAPI = ()=>{
           <div className='list-bonds'>
            <div className='bonds-center'>
             <Row className='bond-column'>
-              {trades.map(trade => (
+              {trades.length>0?
+              <>{trades.map(trade => (
                   <div className='container' key={trade.trade_id}>
                     <TradeDetails info={trade}  />
                   </div>
-                ))}
+                ))}</>:
+                <>{<h1>There are no trades in this bond</h1>}</>
+              }
             </Row>
             </div>
             </div>

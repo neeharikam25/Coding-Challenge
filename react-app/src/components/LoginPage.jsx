@@ -1,7 +1,8 @@
 import { Navigate, useNavigate } from 'react-router-dom';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../config/firebase' 
+
 
 const LoginPage = () => {
     const containerStyle = {
@@ -16,7 +17,10 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const [items, setItems] = useState([]);
 
+  
+ 
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -24,14 +28,22 @@ const LoginPage = () => {
     .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        //localStorage.clear();
+        localStorage.setItem('email', JSON.stringify(email));
+        setTimeout(function(){
+            // change location
+        }, 3000);
         navigate("/allBonds", { state: { email: email } })
         console.log(user);
+       
+       
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage)
-    });}
+    });
+}
     return (
         <div style={containerStyle}>
         <div className="container h-100">
@@ -59,7 +71,7 @@ const LoginPage = () => {
             onChange={(e)=>setPassword(e.target.value)} className="form-control" />
                             </div>
                             <div className="d-flex justify-content-center mt-3 login_container">
-                                <button className="btn login_btn" type="submit" onClick={onLogin}>SIGN IN</button>
+                                <button className="btn login_btn" type="submit" onClick={onLogin} >SIGN IN</button>
                             </div>
                         </form>
                     </div>
@@ -74,5 +86,6 @@ const LoginPage = () => {
         </div>
     );
 };
+
 
 export default LoginPage;

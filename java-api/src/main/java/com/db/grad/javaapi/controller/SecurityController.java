@@ -37,10 +37,10 @@ public class SecurityController {
     }
 
     @GetMapping("/security/user/{id}")
-    public List<Security> getSecurityByUserId(@PathVariable(value = "id") int id)
+    public ResponseEntity<List<Security>> getSecurityByUserId(@PathVariable(value = "id") int id)
             throws ResourceNotFoundException {
         List<Security> security = securityService.getSecurityIdByUserId(id);
-        return security;
+        return ResponseEntity.ok(security);
     }
 
     @PostMapping("/security")

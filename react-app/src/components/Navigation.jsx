@@ -13,13 +13,21 @@ import { useEffect, useState } from "react";
 
 const Navigation = () => {
   const [activeUrl, setActiveUrl] = useState("");
-
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    if(activeUrl!=='/')
+    {setItems(JSON.parse(localStorage.getItem('email')));
+    }
+  }, []);
 
   const handleLogout = () => {
       signOut(auth).then(() => {
       // Sign-out successful.
+      localStorage.removeItem('email');
+      //localStorage.clear();
           navigate("/");
           console.log("Signed out successfully")
+         
       }).catch((error) => {
       // An error happened.
       });
@@ -40,21 +48,11 @@ const Navigation = () => {
     {activeUrl!=="/"?<>
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        {/* <Card.Text
-          style={{
-            fontSize: "20px",
-            marginLeft: "15%",
-            marginRight: "15%",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {" "}
-          Hello, user!
-        </Card.Text> */}
 
-        <Navbar.Text href="/">Hello, user!</Navbar.Text>
 
-        <Navbar.Brand href="/allBonds">My Bonds App</Navbar.Brand>
+        <Navbar.Text href="/" >Hello, {items}!</Navbar.Text>
+
+        <Navbar.Brand  >My Bonds App</Navbar.Brand>
 
         <div id="navbar_buttons">
           <Button className="btn login_btn" id="button-55" onClick={handleLogout}> Sign out </Button>
@@ -62,7 +60,7 @@ const Navigation = () => {
           {/* add the second button ( Go back to Main Page ) only if we are not in the main page */}
           {activeUrl !== "/allBonds" ? (
             <Button id="back_button"   onClick={() => {
-              navigate('/allBonds');
+              navigate('/allBonds', { state: { email: items } });
             }}> Back to Main Page </Button>
           ) : (
             <></>

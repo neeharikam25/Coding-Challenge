@@ -40,10 +40,10 @@ public class CounterPartiesController {
     }
 
     @GetMapping("/counterparties/name/{id}")
-    public String getCPNameById(@PathVariable(value = "id") int id)
+    public ResponseEntity<String> getCPNameById(@PathVariable(value = "id") int id)
             throws ResourceNotFoundException {
         String trades = cpService.getCPName(id);
-        return trades;
+        return ResponseEntity.ok(trades);
     }
 
 
