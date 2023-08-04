@@ -3,6 +3,7 @@ import BondDetails from './BondDetails'
 import Row from 'react-bootstrap/Row'
 import { useState, useEffect} from 'react'
 import { getAllBonds } from '../services/BondServices'
+import { DatePicker } from '@mui/x-date-pickers'
 
 const AllBonds = () => {
 
@@ -27,6 +28,7 @@ const getBondsFromAPI = ()=>{
     
         return (
           <>
+          <DatePicker label="Basic date picker" />
           <div className='list-bonds'>
            <div className='bonds-center'>
             <Row className='bond-column'>
