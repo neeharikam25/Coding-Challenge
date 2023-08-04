@@ -17,7 +17,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Login/>} />
 
-          <Route path="/allbonds" element={<AllBonds/>} />
+          <Route path="/allBonds" element={<AllBonds/>} />
           <Route path='/seeTrades' element={<AllTrades/>}/>
 
         </Routes>
