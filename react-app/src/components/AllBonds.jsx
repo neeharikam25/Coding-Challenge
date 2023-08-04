@@ -9,6 +9,7 @@ import { differenceInDays } from "date-fns";
 
 const AllBonds = () => {
   const [bonds, setBonds] = useState([]);
+  const [firstChange, setFirstChange] = useState(false);
 
   //const [value, setValue] = useState(new Date(2021, 0, 3, 0, 0, 0));
 
@@ -16,6 +17,7 @@ const AllBonds = () => {
 
   const handlerChange = (newValue) => {
     setValue(newValue.$d);
+    setFirstChange(true);
   };
 
   useEffect(() => {
@@ -51,8 +53,14 @@ const AllBonds = () => {
           <Row className="bond-column">
             {bonds.map((bond) => {
               if (
-                differenceInDays(new Date(bond.bondMaturityDate), value) <= 5 &&
-                differenceInDays(new Date(bond.bondMaturityDate), value) >= -5
+                firstChange === false ||
+                (differenceInDays(new Date(bond.bondMaturityDate), value) <=
+                  5 &&
+                  differenceInDays(new Date(bond.bondMaturityDate), value) >=
+                    0) ||
+                (differenceInDays(new Date(bond.bondMaturityDate), value) >=
+                  -5 &&
+                  differenceInDays(new Date(bond.bondMaturityDate), value) <= 0)
               )
                 return (
                   <div className="container" key={bond.securityId}>
