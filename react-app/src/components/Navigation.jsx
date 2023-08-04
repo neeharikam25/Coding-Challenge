@@ -2,77 +2,87 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import Container from "react-bootstrap/Container";
-import {  signOut } from "firebase/auth";
-import {auth} from '../config/firebase' 
-import { useNavigate } from 'react-router-dom';
+import { signOut } from "firebase/auth";
+import { auth } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-
 const Navigation = () => {
   const [activeUrl, setActiveUrl] = useState("");
   const [items, setItems] = useState([]);
-  useEffect(() => {
-    if(activeUrl!=='/')
-    {setItems(JSON.parse(localStorage.getItem('email')));
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (activeUrl !== "/") {
+  //     setItems(JSON.parse(localStorage.getItem("email")));
+  //   }
+  // }, []);
 
   const handleLogout = () => {
-      signOut(auth).then(() => {
-      // Sign-out successful.
-      localStorage.removeItem('email');
-      //localStorage.clear();
-          navigate("/");
-          console.log("Signed out successfully")
-         
-      }).catch((error) => {
-      // An error happened.
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        localStorage.removeItem("email");
+        //localStorage.clear();
+        navigate("/");
+        console.log("Signed out successfully");
+      })
+      .catch((error) => {
+        // An error happened.
       });
-  }
+  };
 
   const appLocation = useLocation();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {}, []);
 
   useEffect(() => {
     setActiveUrl(window.location.pathname);
   }, [appLocation]);
 
-  console.log(activeUrl);
 
   return (
     <div className="App">
-    {activeUrl!=="/"?<>
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
+      {activeUrl !== "/" ? (
+        <>
+          <Navbar expand="lg" className="bg-body-tertiary">
+            <Container>
+              <Navbar.Text href="/">Hello, {items}!</Navbar.Text>
 
+              <Navbar.Brand>My Bonds App</Navbar.Brand>
 
-        <Navbar.Text href="/" >Hello, {items}!</Navbar.Text>
+              <div id="navbar_buttons">
+                <Button
+                  className="btn login_btn"
+                  id="button-55"
+                  onClick={handleLogout}
+                >
+                  {" "}
+                  Sign out{" "}
+                </Button>
 
-        <Navbar.Brand  >My Bonds App</Navbar.Brand>
-
-        <div id="navbar_buttons">
-          <Button className="btn login_btn" id="button-55" onClick={handleLogout}> Sign out </Button>
-
-          {/* add the second button ( Go back to Main Page ) only if we are not in the main page */}
-          {activeUrl !== "/allBonds" ? (
-            <Button id="back_button"   onClick={() => {
-              navigate('/allBonds', { state: { email: items } });
-            }}> Back to Main Page </Button>
-          ) : (
-            <></>
-          )}
-        </div>
-      </Container>
-    </Navbar>
-    </>
-    :
-    <>
-    </>
-    }
+                {/* add the second button ( Go back to Main Page ) only if we are not in the main page */}
+                {activeUrl !== "/allBonds" ? (
+                  <Button
+                    id="back_button"
+                    onClick={() => {
+                      navigate("/allBonds", { state: { email: items } });
+                    }}
+                  >
+                    {" "}
+                    Back to Main Page{" "}
+                  </Button>
+                ) : (
+                  <></>
+                )}
+              </div>
+            </Container>
+          </Navbar>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
