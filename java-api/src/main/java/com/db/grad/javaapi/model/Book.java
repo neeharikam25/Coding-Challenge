@@ -18,6 +18,8 @@ public class Book {
         this.name = name;
     }
 
+    @Id
+    @Column(name = "book_id", nullable = false)
     public int getBook_id() {
         return book_id;
     }

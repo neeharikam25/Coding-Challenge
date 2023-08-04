@@ -41,7 +41,7 @@ const Navigation = () => {
 
         <Navbar.Text href="/">Hello, user!</Navbar.Text>
 
-        <Navbar.Brand href="/">My Bonds App</Navbar.Brand>
+        <Navbar.Brand href="/allBonds">My Bonds App</Navbar.Brand>
 
         <div id="navbar_buttons">
           <Button className="btn login_btn" id="button-55" onClick={() => {

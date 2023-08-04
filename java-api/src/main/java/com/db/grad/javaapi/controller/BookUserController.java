@@ -36,6 +36,13 @@ public class BookUserController {
         return ResponseEntity.ok().body(BookUser);
     }
 
+    @GetMapping("/bookuser/books/{id}")
+    public List<Integer> getBooksByUserId(@PathVariable(value = "id") int id)
+            throws ResourceNotFoundException {
+        List<Integer> BookUser = BookUserService.getBookIDUserById(id);
+        return BookUser;
+    }
+
     @PostMapping("/bookuser")
     public BookUser createBookUser(@Valid @RequestBody BookUser BookUser) {
         return BookUserService.addBookUser(BookUser);

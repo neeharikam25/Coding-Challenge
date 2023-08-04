@@ -69,6 +69,20 @@ public class UserHandler {
         return result;
     }
 
+    public int getUserIdByEmail(String email )
+    {
+
+        List<Integer> User = UserRepository.findIdByEmail(email);
+        Integer result = null;
+
+        if( User.size() == 1)
+            result = User.get(0);
+
+        return result;
+    }
+
+
+
     public User updateUserDetails(User UserToUpdate)
     {
         return UserRepository.save( UserToUpdate );

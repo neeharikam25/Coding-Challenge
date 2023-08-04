@@ -36,6 +36,13 @@ public class SecurityController {
         return ResponseEntity.ok().body(security);
     }
 
+    @GetMapping("/security/user/{id}")
+    public List<Security> getSecurityByUserId(@PathVariable(value = "id") int id)
+            throws ResourceNotFoundException {
+        List<Security> security = securityService.getSecurityIdByUserId(id);
+        return security;
+    }
+
     @PostMapping("/security")
     public Security createNewSecurity(@Valid @RequestBody Security se) {
         return securityService.addSecurity(se);

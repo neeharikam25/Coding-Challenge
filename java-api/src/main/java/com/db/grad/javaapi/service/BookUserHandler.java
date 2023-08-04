@@ -63,6 +63,17 @@ public class BookUserHandler {
         return result;
     }
 
+    public List<Integer> getBookIDUserById(int id )
+    {
+        List<Integer> BookUser = BookUserRepository.findBookIdByUserIdd(id);
+        List<Integer> result = null;
+
+        if( BookUser.size() != 0)
+            result = BookUser;
+
+        return result;
+    }
+
     public BookUser updateBookUserDetails(BookUser BookUserToUpdate)
     {
         return BookUserRepository.save( BookUserToUpdate );

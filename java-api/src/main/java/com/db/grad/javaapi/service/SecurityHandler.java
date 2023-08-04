@@ -46,4 +46,17 @@ public class SecurityHandler {
         return  result;
     }
 
+
+    public  List<Security> getSecurityIdByUserId(int id )
+    {
+
+        List<Security> securities = securityRepo.findSecurityByUserId(id);
+        List<Security> result = null;
+
+        if( securities.size() != 0)
+            result = securities;
+
+        return result;
+    }
+
 }

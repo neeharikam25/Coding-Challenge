@@ -37,6 +37,13 @@ public class UserController {
         return ResponseEntity.ok().body(User);
     }
 
+    @GetMapping("/user/email/{id}")
+    public Integer getUserIdByEmail(@PathVariable(value = "id") String id)
+            throws ResourceNotFoundException {
+        Integer User = UserService.getUserIdByEmail(id);
+        return User;
+    }
+
     @PostMapping("/user")
     public User createUser(@Valid @RequestBody User User) {
         return UserService.addUser(User);
