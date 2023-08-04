@@ -18,7 +18,7 @@ const Login = () => {
     .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/allbonds")
+        navigate("/allBonds")
         console.log(user);
     })
     .catch((error) => {
