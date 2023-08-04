@@ -17,16 +17,13 @@ function App() {
   return (
     <>
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-
     <Navigation></Navigation>
         <Routes>
         <Route path="/" element={<LoginPage/>} />
-
-          <Route path="/allbonds" element={<AllBonds/>} />
-          <Route path='/seeTrades' element={<AllTrades/>}/>
-
+        <Route path="/allbonds" element={<AllBonds/>} />
+        <Route path='/seeTrades' element={<AllTrades/>}/>
         </Routes>
-</LocalizationProvider>
+    </LocalizationProvider>
     </>
   );
 }

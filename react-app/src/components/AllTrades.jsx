@@ -26,22 +26,22 @@ const getTradesFromAPI = ()=>{
   })
 }
     
-        return (
-          <>
-          <h1> See trades</h1>
-          <div className='list-bonds'>
-           <div className='bonds-center'>
-            <Row className='bond-column'>
-              {trades.map(trade => (
-                  <div className='container' key={trade.trade_id}>
-                    <TradeDetails info={trade}  />
-                  </div>
-                ))}
-            </Row>
+  return (
+    <>
+    <h1>See trades</h1>
+    <div className='list-bonds'>
+      <div className='bonds-center'>
+      <Row className='bond-column'>
+        {trades.map(trade => (
+            <div className='container' key={trade.trade_id}>
+              <TradeDetails info={trade}  />
             </div>
-            </div>
-          </>
-        )
+          ))}
+      </Row>
+      </div>
+      </div>
+    </>
+  )
 
 
     }

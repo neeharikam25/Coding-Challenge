@@ -228,6 +228,14 @@ html {
     color: #06261d;
   }
 
+.back_btn {
+  width: 100%;
+  max-width: 200px;
+  margin-left: 20px;
+  background: #accee0 !important;
+  color: rgb(50, 58, 117) !important;
+}
+
 
 /* CSS */
 #button-55 {

@@ -50,7 +50,7 @@ const Navigation = () => {
 
           {/* add the second button ( Go back to Main Page ) only if we are not in the main page */}
           {activeUrl !== "/allBonds" ? (
-            <Button id="back_button"   onClick={() => {
+            <Button className="btn back_btn" id="button-55" onClick={() => {
               navigate('/allBonds');
             }}> Back to Main Page </Button>
           ) : (
