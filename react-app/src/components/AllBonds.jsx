@@ -10,9 +10,11 @@ const AllBonds = () => {
 const [bonds,setBonds] = useState([]);
 
 useEffect(()=>{
-  getBondsFromAPI();}, 
+  getBondsFromAPI();},
   []
 );
+
+
 
 const getBondsFromAPI = ()=>{
   getAllBonds()
@@ -24,7 +26,7 @@ const getBondsFromAPI = ()=>{
       console.log(err);
   })
 }
-    
+
         return (
           <>
           <div className='list-bonds'>

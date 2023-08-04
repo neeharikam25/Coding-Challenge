@@ -2,15 +2,28 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import Container from "react-bootstrap/Container";
-
+import {  signOut } from "firebase/auth";
+import {auth} from '../config/firebase' 
+import { useNavigate } from 'react-router-dom';
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Navigate,useNavigate } from 'react-router-dom';
+
 
 const Navigation = () => {
   const [activeUrl, setActiveUrl] = useState("");
+
+
+  const handleLogout = () => {
+      signOut(auth).then(() => {
+      // Sign-out successful.
+          navigate("/");
+          console.log("Signed out successfully")
+      }).catch((error) => {
+      // An error happened.
+      });
+  }
 
   const appLocation = useLocation();
   const navigate=useNavigate();
@@ -44,9 +57,7 @@ const Navigation = () => {
         <Navbar.Brand href="/">My Bonds App</Navbar.Brand>
 
         <div id="navbar_buttons">
-          <Button className="btn login_btn" id="button-55" onClick={() => {
-              navigate('/');
-            }}> Sign out </Button>
+          <Button className="btn login_btn" id="button-55" onClick={handleLogout}> Sign out </Button>
 
           {/* add the second button ( Go back to Main Page ) only if we are not in the main page */}
           {activeUrl !== "/allBonds" ? (
