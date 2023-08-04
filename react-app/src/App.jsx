@@ -10,9 +10,13 @@ import AllTrades from "./components/AllTrades";
 import Navigation from './components/Navigation'
 import Login from './components/Login'
 import LoginPage from './components/LoginPage'
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+
 function App() {
   return (
     <>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
     <Navigation></Navigation>
         <Routes>
         <Route path="/" element={<LoginPage/>} />
@@ -21,7 +25,7 @@ function App() {
           <Route path='/seeTrades' element={<AllTrades/>}/>
 
         </Routes>
-
+    </LocalizationProvider>
     </>
   );
 }

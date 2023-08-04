@@ -25,7 +25,6 @@ const getTradesFromAPI = ()=>{
       console.log(err);
   })
 }
-    
         return (
           <>
           <h1> See trades</h1>
@@ -41,10 +40,10 @@ const getTradesFromAPI = ()=>{
                 <>{<h1>There are no trades in this bond</h1>}</>
               }
             </Row>
-            </div>
-            </div>
-          </>
-        )
+      </div>
+      </div>
+    </>
+  )
 
 
     }

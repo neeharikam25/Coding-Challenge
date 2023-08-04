@@ -1,3 +1,4 @@
+
 import React from 'react'
 import BondDetails from './BondDetails'
 import Row from 'react-bootstrap/Row'
@@ -6,13 +7,17 @@ import { Link, useNavigate,useLocation,useParams } from 'react-router-dom';
 import { getAllBonds } from '../services/BondServices'
 import {getUserId} from '../services/UserServices'
 import {auth} from '../config/firebase' 
+import { DatePicker } from "@mui/x-date-pickers";
+import dayjs from "dayjs";
+import { differenceInDays } from "date-fns";
+import { Button } from "@mui/material";
 
 const AllBonds = () => {
+  const [bonds, setBonds] = useState([]);
+  const [firstChange, setFirstChange] = useState(false);
 
   const [items, setItems] = useState([]);
  
-
-const [bonds,setBonds] = useState([]);
 const [uid,setUid]=useState('');
 const { state } = useLocation();
 const [email,setEmail]=useState('')
@@ -39,33 +44,65 @@ useEffect(() => {
   fetchData();
 }, []);
 
+  const [value, setValue] = useState();
+
+  const handlerChange = (newValue) => {
+    setValue(newValue.$d);
+    setFirstChange(true);
+  };
 
 
+  return (
+    <>
+      <DatePicker
+        label="Bond maturity date"
+        onChange={(newValue) => {
+          handlerChange(newValue);
+        }}
+      />
+      <Button
+        className="btn back_btn"
+        onClick={() => {
+          setFirstChange(false);
+        }}
+      >
+        {" "}
+        See all Bonds!{" "}
+      </Button>
 
-
-
-        return (
-          <>
-          <div className='list-bonds'>
-           <div className='bonds-center'>
-            <Row className='bond-column'>
+      <div className="list-bonds">
+        <div className="bonds-center">
+          <Row className="bond-column">
             {bonds.length>0?
-            <>{bonds.map((bond) => (
-                  <div className='container' key={bond.securityId}>
-                    <BondDetails info={bond}  />
+            <>{bonds.map((bond) => {
+              if (
+                firstChange === false ||
+                (differenceInDays(new Date(bond.bondMaturityDate), value) <=
+                  5 &&
+                  differenceInDays(new Date(bond.bondMaturityDate), value) >=
+                    0) ||
+                (differenceInDays(new Date(bond.bondMaturityDate), value) >=
+                  -5 &&
+                  differenceInDays(new Date(bond.bondMaturityDate), value) <= 0)
+              )
+                return (
+                  <div className="container" key={bond.securityId}>
+                    <BondDetails info={bond} />
+                    {console.log(
+                      differenceInDays(new Date(bond.bondMaturityDate), value)
+                    )}
                   </div>
-                ))}
-                </>:
-                <>{<h1>Sorry you have no bonds</h1>}</>} 
-            </Row>
-            </div>
-            </div>
-          </>
-        )
+                );
 
+              return <div key={bond.securityId}></div>;
+})}</> : 
+<>{<h1>Sorry you have no bonds</h1>}</>} 
+          </Row>
+        </div>
+      </div>
+    </>
+  );
+};
 
-    }
+export default AllBonds;
 
-    
-
-export default AllBonds
