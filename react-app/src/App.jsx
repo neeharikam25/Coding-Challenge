@@ -9,19 +9,19 @@ import AllBonds from './components/AllBonds'
 import AllTrades from "./components/AllTrades";
 import Navigation from './components/Navigation'
 import Login from './components/Login'
-
+import LoginPage from './components/LoginPage'
 function App() {
   return (
     <>
     <Navigation></Navigation>
         <Routes>
-        <Route path="/" element={<Login/>} />
+        <Route path="/" element={<LoginPage/>} />
 
           <Route path="/allbonds" element={<AllBonds/>} />
           <Route path='/seeTrades' element={<AllTrades/>}/>
-  
+
         </Routes>
-      
+
     </>
   );
 }
