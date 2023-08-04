@@ -12,9 +12,9 @@ import { Link } from 'react-router-dom';
 
 const BondDetails = (props ) => {
 
- 
+
   const [ok,setOk]=useState(false)
-  
+
   const showMore=()=>
   {
     console.log(props.info.bondMaturityDate);
@@ -32,22 +32,22 @@ const navigate=useNavigate();
     <Card.Body >
     <Card.Title className='cardHover' >Bond {props.info.securityId}</Card.Title>
       <Card.Title >Maturity date: {props.info.bondMaturityDate}</Card.Title>
-      
+
       <Row className='category-bold'>
-        <Col><Button id='btnn'  onClick={()=>{showMore()}}>{ok==false? "Show more" : "Show less"}</Button></Col>
+        <Col><Button className="btn login_btn" onClick={()=>{showMore()}}>{ok==false? "Show more" : "Show less"}</Button></Col>
         {ok==true ?
         <><Col><Card.Text >ISIN: {props.info.isin}</Card.Text > </Col>
         <Col><Card.Text >CUSIP: {props.info.cusip}</Card.Text > </Col>
         <Col><Card.Text >ISSUER: {props.info.issuerName}</Card.Text > </Col>
      </>
-        
+
         :
         <>
         </>}
-        
+
       </Row>
-      
-    <Button
+
+    <Button className="btn login_btn"
         id='btnn'
         onClick={() => {
           // Navigate to '/seeTrades' with the 'securityId' as a parameter
