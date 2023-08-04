@@ -15,7 +15,7 @@ function App() {
     <>
     <Navigation></Navigation>
         <Routes>
-        <Route path="/" element={<LoginPage/>} />
+        <Route path="/" element={<Login/>} />
 
           <Route path="/allbonds" element={<AllBonds/>} />
           <Route path='/seeTrades' element={<AllTrades/>}/>

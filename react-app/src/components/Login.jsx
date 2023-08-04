@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Navigate,useNavigate } from 'react-router-dom';
 import { ToastContainer,toast } from "react-toastify";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from '../config/firebase' 
+import {auth} from '../config/firebase'
 
 const Login = () => {
   // const [data, setData] = useState({
@@ -32,22 +32,26 @@ const Login = () => {
     catch(err){
       if(err.code==='auth/invalid-email'){
         toast.error('Invalid email id')
+        setError(err.message);
       }
       if(err.code==='auth/user-not-found'){
         toast.error('Please check your email')
+        setError(err.message);
       }
       if(err.code==='auth/wrong-password'){
         toast.error('Please check your password')
+        setError(err.message);
       }
       if(err.code==='auth/too-many-requests'){
         toast.error('Too many attempts, try again later')
+        setError(err.message);
       }
     }
 
   };
 
 
- 
+
   return (
     <div id="login">
       <h1>Log In</h1>
