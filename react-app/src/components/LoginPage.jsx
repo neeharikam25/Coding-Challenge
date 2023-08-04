@@ -24,7 +24,7 @@ const LoginPage = () => {
     .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/allBonds")
+        navigate("/allBonds", { state: { email: email } })
         console.log(user);
     })
     .catch((error) => {

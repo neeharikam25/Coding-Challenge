@@ -1,6 +1,6 @@
-INSERT INTO Users (user_id, name, email) VALUES (1, 'Alex', 'alex@email');
-INSERT INTO Users (user_id, name, email) VALUES (2, 'Neeharika', 'neeharika@email');
-INSERT INTO Users (user_id, name, email) VALUES (3, 'Teodora', 'teodora@email');
+INSERT INTO Users (user_id, name, email) VALUES (1, 'Alex', 'alex@email.com');
+INSERT INTO Users (user_id, name, email) VALUES (2, 'Neeharika', 'neeharika@email.com');
+INSERT INTO Users (user_id, name, email) VALUES (3, 'Teodora', 'teodora@email.com');
 
 INSERT INTO Book (book_id, name) VALUES (1, 'trading_book_1');
 INSERT INTO Book (book_id, name) VALUES (2, 'trading_book_2');
