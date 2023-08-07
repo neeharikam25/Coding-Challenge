@@ -19,6 +19,8 @@ const AllTrades = () => {
     type: "type",
     quantity: "quantity",
     counterparty: "counterparty",
+    isin: "isin",
+    book: "Tradebook ID"
   };
 
   const { state } = useLocation();

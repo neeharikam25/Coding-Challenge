@@ -41,6 +41,8 @@ const TradeDetails = (props) => {
       <td>{props.info.type}</td>
       <td>{props.info.quantity}</td>
       <td>{cp}</td>
+      <td>{props.isin}</td>
+      <td>{props.book}</td>
     </tr>
 
     // </Row>

@@ -21,6 +21,8 @@ const FakeTradeDetails = (props) => {
       <td>{props.info.type}</td>
       <td>{props.info.quantity}</td>
       <td>{props.info.counterparty}</td>
+      <td>{props.info.isin}</td>
+      <td>{props.info.book}</td>
     </tr>
     //     </Row>
     //   </div>
