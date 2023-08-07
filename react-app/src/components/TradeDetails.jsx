@@ -37,9 +37,15 @@ getCPFromAPI(props.info.counterparty_id);
 
     <Card.Body >
     <Card.Title >Trade {props.info.trade_id}</Card.Title>
+    <Card.Title>ISIN : {props.isin}</Card.Title>
+    <Card.Title>Book : Book{props.book}</Card.Title>
       <Card.Title >Trade settlement date: {props.info.trade_settlement_date}</Card.Title>
       <Card.Title >Trade date: {props.info.trade_date}</Card.Title>
+      <Card.Title id="status" style={{color:'#008000'}}>Status: {props.info.status}</Card.Title>
       <Card.Title >Currency: {props.info.currency}</Card.Title>
+        <Card.Title>Unit price: {props.info.unit_price}</Card.Title>
+        <Card.Title>Buy/Sell : {props.info.type}</Card.Title>
+        <Card.Title>Quantity : {props.info.quantity}</Card.Title>
       <Card.Title >Counter Party : {cp}</Card.Title>
       
     

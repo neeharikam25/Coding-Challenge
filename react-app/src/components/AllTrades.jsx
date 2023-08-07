@@ -34,7 +34,7 @@ const getTradesFromAPI = ()=>{
               {trades.length>0?
               <>{trades.map(trade => (
                   <div className='container' key={trade.trade_id}>
-                    <TradeDetails info={trade}  />
+                    <TradeDetails info={trade} isin={state.isin} book={state.book} />
                   </div>
                 ))}</>:
                 <>{<h1>There are no trades in this bond</h1>}</>

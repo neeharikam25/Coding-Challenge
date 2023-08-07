@@ -51,7 +51,7 @@ const navigate=useNavigate();
         id='btnn'
         onClick={() => {
           // Navigate to '/seeTrades' with the 'securityId' as a parameter
-          navigate('/seeTrades', { state: { securityId: props.info.securityId } });
+          navigate('/seeTrades', { state: { securityId: props.info.securityId ,isin:props.info.isin,book:props.info.bookId} });
         }}
       >
         Show trades
