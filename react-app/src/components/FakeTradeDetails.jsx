@@ -6,31 +6,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { getAllTrades, getTradesCP } from "../services/TradeServices";
 
-const TradeDetails = (props) => {
-  const [counter, setCounter] = useState(0);
-  const [cp, setCp] = useState("");
-
-  const [ok, setOk] = useState(false);
-  useEffect(() => {
-    getCPFromAPI();
-  }, []);
-
-  const getCPFromAPI = (arg) => {
-    getTradesCP(arg)
-      .then((res) => {
-        setCp(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  getCPFromAPI(props.info.counterparty_id);
+const FakeTradeDetails = (props) => {
   return (
     // <div className="list-bonds">
-    //     <div className="bonds-center">
-    //       <Row className="bond-column">
-
+    //   <div className="bonds-center">
+    //     <Row className="bond-column">
     <tr>
       <td>{props.info.trade_id}</td>
       <td>{props.info.trade_settlement_date}</td>
@@ -40,15 +20,14 @@ const TradeDetails = (props) => {
       <td>{props.info.unit_price}</td>
       <td>{props.info.type}</td>
       <td>{props.info.quantity}</td>
-      <td>{cp}</td>
-      <td>{props.isin}</td>
-      <td>{props.book}</td>
+      <td>{props.info.counterparty}</td>
+      <td>{props.info.isin}</td>
+      <td>{props.info.book}</td>
     </tr>
-
-    // </Row>
-    // </div>
+    //     </Row>
+    //   </div>
     // </div>
   );
 };
 
-export default TradeDetails;
+export default FakeTradeDetails;
