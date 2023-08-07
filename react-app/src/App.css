@@ -272,3 +272,45 @@ html {
   background: var(--color);
   color: #fff;
 }
+
+.trades-header {
+  display: flex;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0f2e9e;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.1em;
+  font-family: sans-serif;
+  width: 100%;
+}
+
+.styled-table thead {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.styled-table thead tr {
+  background-color: #0f2e9e;
+  color: #ffffff;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 15px 16px;
+  width: 150px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  display: flex;
+  justify-content: space-between;
+}
