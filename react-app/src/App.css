@@ -5,18 +5,6 @@
   }
 }
 
-#bond {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: #f3f3b5;
-  color: #66cdaa;
-  border-radius: 20px;
-  background-repeat: no-repeat;
-  background-size: 400%;
-  border: 3px solid #ffb793;
-  box-shadow: -6px 11px 15px 5px #ffb793;
-}
 
 .category-bold {
   font-weight: bold;
@@ -78,7 +66,7 @@
   width: 40%;
 }
 
-.bonds-center {
+.trades-center {
   display: flex;
   justify-content: center;
 }
@@ -272,7 +260,7 @@ html {
   background: var(--color);
   color: #fff;
 }
-
+/*........................Trades............................*/
 .trades-header {
   display: flex;
   margin-left: 10%;
@@ -313,4 +301,103 @@ html {
   border-bottom: 1px solid #dddddd;
   display: flex;
   justify-content: space-between;
+}
+
+/*..................END TRADES......................*/
+
+
+.list-bonds {
+  padding: 20px;
+}
+
+.bonds-center {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(114, 103, 103, 0.1);
+  overflow: hidden;
+}
+
+.bond-column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#bond {
+  margin-bottom: 20px;
+  background-color: #070404;
+  border: 1px solid #1c4448;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(143, 120, 120, 0.1);
+  padding: 10px;
+}
+
+.cardHover:hover {
+  color: #111b27;
+  cursor: pointer;
+}
+
+.category-bold {
+  margin-top: 10px;
+}
+
+.more {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.less {
+  background-color: #512b2e;
+  border-color: #dc3545;
+}
+
+.expanded {
+  height: auto;
+}
+
+.collapsed {
+  height: 150px;
+  overflow: hidden;
+}
+
+#cardBondDetails {
+  background-color: #100d0d;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.category-bold {
+  font-weight: bold;
+}
+
+.btn-show-more {
+  background-color: #6e8398;
+  color: #fff;
+}
+
+.btn-show-less {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-show-trades {
+  background-color: #506b56;
+  color: #fff;
+}
+.text-right{
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container_new{
+  min-width: 500px;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: auto;
+
 }
