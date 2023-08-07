@@ -1,4 +1,3 @@
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -26,35 +25,33 @@
   margin: 10px;
 }
 
-
 .btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: space-evenly;
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
-  background-color:#0a0a23;
+  background-color: #0a0a23;
   border: 2px solid #d8e4d4;
   color: #fff;
-
 }
 
 #btnn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: space-evenly;
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
-  background-color:#0a0a23;
+  background-color: #0a0a23;
   border: 2px solid #d8e4d4;
   color: #fff;
-
 }
 
-#buttons a, #buttons button {
-  font-family: 'Poppins', sans-serif;
+#buttons a,
+#buttons button {
+  font-family: "Poppins", sans-serif;
   display: flex;
   text-decoration: none;
   justify-content: center;
@@ -68,9 +65,8 @@
   border-radius: 16px;
   font-size: 20px;
   font-weight: 500;
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
-
 
 .bonds-column {
   display: flex;
@@ -112,11 +108,11 @@
 }
 
 .navbar-brand {
-  font-size: 40px !important;
+  font-size: 40px !important;
 }
 
-
-#register, #login {
+#register,
+#login {
   position: relative;
   left: 50%;
   transform: translate(-50%, 50%);
@@ -128,13 +124,13 @@
   box-shadow: -6px 11px 15px 5px #66cdaa;
 }
 
-#register h1, #login h1 {
-  font-family: 'Poppins', sans-serif;
+#register h1,
+#login h1 {
+  font-family: "Poppins", sans-serif;
   padding-top: 20px;
   text-align: center;
   color: #fff;
 }
-
 
 #form-container {
   width: 80%;
@@ -147,7 +143,7 @@
 }
 
 #form-container label {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: rgb(3, 4, 4);
   font-size: 20px;
 }
@@ -170,9 +166,9 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: '';
-      background-size: 100% 100%;
-      background-position: center;
+  background: "";
+  background-size: 100% 100%;
+  background-position: center;
 }
 .user_card {
   width: 350px;
@@ -185,19 +181,19 @@ html {
   flex-direction: column;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
-
 }
 
 .form_container {
   margin-top: 20px;
 }
 
-#form-title{
+#form-title {
   color: #092f37;
-
 }
 
 .login_btn {
@@ -226,8 +222,8 @@ html {
 }
 
 .links a {
-    color: #06261d;
-  }
+  color: #06261d;
+}
 
 .back_btn {
   width: 100%;
@@ -237,22 +233,25 @@ html {
   color: rgb(50, 58, 117) !important;
 }
 
-
 /* CSS */
 #button-55 {
-  --b: 3px;   /* border thickness */
-  --s: .45em; /* size of the corner */
-  --color: #373B44;
+  --b: 3px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: #373b44;
 
-  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
   color: var(--color);
   --_p: var(--s);
-  background:
-    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: .3s linear, color 0s, background-color 0s;
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
   outline: var(--b) solid #0000;
-  outline-offset: .6em;
+  outline-offset: 0.6em;
   font-size: 16px;
 
   border: 0;
@@ -263,10 +262,10 @@ html {
 }
 
 #button-55:hover,
-#button-55:focus-visible{
+#button-55:focus-visible {
   --_p: 0px;
   outline-color: var(--color);
-  outline-offset: .05em;
+  outline-offset: 0.05em;
 }
 
 #button-55:active {
@@ -279,13 +278,14 @@ html {
   margin-left: 10%;
   margin-top: 2%;
   margin-bottom: 2%;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: #0f2e9e;
 }
 
 .styled-table {
   border-collapse: collapse;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   font-size: 1.1em;
   font-family: sans-serif;
@@ -305,9 +305,12 @@ html {
 
 .styled-table th,
 .styled-table td {
-    padding: 15px 16px;
+  padding: 15px 16px;
+  width: 150px;
 }
 
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
+  display: flex;
+  justify-content: space-between;
 }
