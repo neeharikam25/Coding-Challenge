@@ -272,3 +272,63 @@ html {
   background: var(--color);
   color: #fff;
 }
+
+body {
+  background-color: #f5f5f5;
+}
+
+.list-bonds {
+  padding: 20px;
+}
+
+.bonds-center {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(114, 103, 103, 0.1);
+  overflow: hidden;
+}
+
+.bond-column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#bond {
+  margin-bottom: 20px;
+  background-color: #070404;
+  border: 1px solid #1c4448;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(143, 120, 120, 0.1);
+  padding: 10px;
+}
+
+.cardHover:hover {
+  color: #111b27;
+  cursor: pointer;
+}
+
+.category-bold {
+  margin-top: 10px;
+}
+
+.more {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.less {
+  background-color: #512b2e;
+  border-color: #dc3545;
+}
+
+.expanded {
+  height: auto;
+}
+
+.collapsed {
+  height: 150px;
+  overflow: hidden;
+}

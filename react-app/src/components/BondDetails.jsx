@@ -27,11 +27,11 @@ const BondDetails = (props ) => {
 const navigate=useNavigate();
 
   return (
-    <Card id='bond'>
+    <Card>
 
     <Card.Body >
-    <Card.Title className='cardHover' >Bond {props.info.securityId}</Card.Title>
-      <Card.Title >Maturity date: {props.info.bondMaturityDate}</Card.Title>
+    <Card.Title className='cardHover' ></Card.Title>
+      <Card.Title ></Card.Title>
 
       <Row className='category-bold'>
         <Col><Button className="btn login_btn" onClick={()=>{showMore()}}>{ok==false? "Show more" : "Show less"}</Button></Col>
