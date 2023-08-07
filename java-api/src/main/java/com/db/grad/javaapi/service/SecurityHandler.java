@@ -1,6 +1,5 @@
 package com.db.grad.javaapi.service;
 
-import com.db.grad.javaapi.model.Dog;
 import com.db.grad.javaapi.model.Security;
 import com.db.grad.javaapi.repository.SecurityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
