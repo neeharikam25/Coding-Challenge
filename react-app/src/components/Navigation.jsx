@@ -14,7 +14,7 @@ const Navigation = (props) => {
   const [activeUrl, setActiveUrl] = useState("");
   const [items, setItems] = useState([]);
 
-  
+
 
 
 
@@ -51,11 +51,11 @@ const Navigation = (props) => {
     <div className="App">
       {activeUrl !== "/" ? (
         <>
-          <Navbar expand="lg" className="bg-body-tertiary">
+          <Navbar expand="lg" className="bg-body-tertiary" style={{backgroundColor:"#ffffff"}}>
             <Container>
               <Navbar.Text href="/">Hello, {props.email}!</Navbar.Text>
 
-              <Navbar.Brand>My Bonds App</Navbar.Brand>
+              <Navbar.Brand style={{fontWeight: "bold", fontSize: "30px"}}>My Bonds App</Navbar.Brand>
 
               <div id="navbar_buttons">
                 <Button
@@ -69,8 +69,8 @@ const Navigation = (props) => {
 
                 {/* add the second button ( Go back to Main Page ) only if we are not in the main page */}
                 {activeUrl !== "/allBonds" ? (
-                  <Button
-                    id="back_button"
+                  <Button className="btn login_btn" style={{marginLeft:"10px"}}
+                  id="button-55"
                     onClick={() => {
                       navigate("/allBonds", { state : { email : props.email }});
                     }}

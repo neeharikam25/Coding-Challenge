@@ -1,7 +1,7 @@
 import { Navigate, useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from '../config/firebase' 
+import {auth} from '../config/firebase'
 
 
 const LoginPage = () => {
@@ -19,8 +19,8 @@ const LoginPage = () => {
     const navigate = useNavigate();
     const [items, setItems] = useState([]);
 
-  
- 
+
+
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -35,8 +35,8 @@ const LoginPage = () => {
         }, 3000);
         navigate("/allBonds", { state: { email: email } })
         console.log(user);
-       
-       
+
+
     })
     .catch((error) => {
         const errorCode = error.code;
@@ -58,7 +58,7 @@ const LoginPage = () => {
                                 <div className="input-group-append">
                                     <span className="input-group-text"><i className="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" name="username"   required                                                                                
+                                <input type="text" name="username"   required
         placeholder="Email address"
         onChange={(e)=>setEmail(e.target.value)} className="form-control" />
                             </div>
@@ -66,7 +66,7 @@ const LoginPage = () => {
                                 <div className="input-group-append">
                                     <span className="input-group-text"><i className="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" name="password" required                                                                                
+                                <input type="password" name="password" required
             placeholder="Password"
             onChange={(e)=>setPassword(e.target.value)} className="form-control" />
                             </div>
@@ -76,9 +76,7 @@ const LoginPage = () => {
                         </form>
                     </div>
                     <div className="mt-4">
-                        <div className="d-flex justify-content-center links">
-                            <a href="/password_reset" className="ml-2">Forgot Password?</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

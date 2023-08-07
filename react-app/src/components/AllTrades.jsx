@@ -10,16 +10,16 @@ import FakeTradeDetails from "./FakeTradeDetails";
 const AllTrades = () => {
 
   const fakeTradeDetails = {
-    trade_id: "id",
-    trade_settlement_date: "trade settlement date",
-    trade_date: "trade date",
-    status: "status",
-    currency: "currency",
-    unit_price: "unit price",
-    type: "type",
-    quantity: "quantity",
-    counterparty: "counterparty",
-    isin: "isin",
+    trade_id: "ID",
+    trade_settlement_date: "Trade settlement date",
+    trade_date: "Trade date",
+    status: "Status",
+    currency: "Currency",
+    unit_price: "Unit price",
+    type: "Type",
+    quantity: "Quantity",
+    counterparty: "Counterparty",
+    isin: "ISIN",
     book: "Tradebook ID"
   };
 
@@ -43,10 +43,11 @@ const AllTrades = () => {
       });
   };
   return (
-    <>
+    <div style={{backgroundColor:"#f8f9fa"}}>
+
       <Navigation email={state.email} />
-      <h4 class="trades-header"> Trades Detail</h4>
-      <div className="list-bonds">
+
+      <div className="list-bonds" style={{backgroundColor:"#f8f9fa"}}>
         <div className="trades-center">
           <Row className="bond-column">
             {trades.length > 0 ? (
@@ -73,7 +74,7 @@ const AllTrades = () => {
           </Row>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

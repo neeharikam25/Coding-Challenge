@@ -95,7 +95,8 @@
 }
 
 .navbar-text {
-  font-size: 24px;
+  font-size: 20px;
+  color: #000000 !important
 }
 
 .navbar-brand {
@@ -165,7 +166,7 @@ html {
   width: 350px;
   margin-top: auto;
   margin-bottom: auto;
-  background: #4d5282;
+  background: rgb(77, 82, 130,0.8);
   position: relative;
   display: flex;
   justify-content: center;
@@ -183,15 +184,15 @@ html {
 }
 
 #form-title{
-  color: #092f37;
+  color: #f0f0f0;
 
 }
 
 .login_btn {
   width: 100%;
   max-width: 200px;
-  background: #accee0 !important;
-  color: rgb(50, 58, 117) !important;
+  background: #0b1a4e !important;
+  color: rgb(211, 212, 216) !important;
 }
 .login_btn:focus {
   box-shadow: none !important;
@@ -287,14 +288,15 @@ html {
 }
 
 .styled-table thead tr {
-  background-color: #0f2e9e;
+  background-color: #212529;
   color: #ffffff;
 }
 
 .styled-table th,
 .styled-table td {
   padding: 15px 16px;
-  width: 150px;
+  width: 135px;
+
 }
 
 .styled-table tbody tr {
@@ -327,15 +329,15 @@ html {
 
 #bond {
   margin-bottom: 20px;
-  background-color: #070404;
   border: 1px solid #1c4448;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(143, 120, 120, 0.1);
   padding: 10px;
+  background: #32383d;
 }
 
 .cardHover:hover {
-  color: #111b27;
+  color: #8798ad;
   cursor: pointer;
 }
 
@@ -363,7 +365,7 @@ html {
 }
 
 #cardBondDetails {
-  background-color: #100d0d;
+  background-color: #897474;
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #ced4da;
@@ -400,4 +402,18 @@ html {
   flex-wrap: nowrap;
   width: auto;
 
+
 }
+
+.additional-info{
+  color: #fff;
+  font-weight: bold;
+}
+
+.date-picker{
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+

@@ -59,14 +59,15 @@ useEffect(() => {
   return (
     <>
       <Navigation email = {state.email }/>
+      <div className='date-picker'>
       <DatePicker
         label="Bond maturity date"
         onChange={(newValue) => {
           handlerChange(newValue);
         }}
       />
-      <Button
-        className="btn back_btn"
+      <Button style={{marginLeft:"10px"}}
+        className="btn login_btn"
         onClick={() => {
           setFirstChange(false);
         }}
@@ -74,12 +75,12 @@ useEffect(() => {
         {" "}
         See all Bonds!{" "}
       </Button>
-
+      </div>
       <table className="table table-hover table-dark">
       <thead>
         <tr>
-          <th scope="col">Bond ID</th>
-          <th scope="col" colspan="3">Maturity date</th>
+          <th scope="col" style={{fontSize:"20px"}}>Bond ID</th>
+          <th scope="col" colspan="3" style={{fontSize:"20px"}}>Maturity date</th>
 
 
         </tr>

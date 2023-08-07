@@ -11,7 +11,7 @@ const FakeTradeDetails = (props) => {
     // <div className="list-bonds">
     //   <div className="bonds-center">
     //     <Row className="bond-column">
-    <tr>
+    <tr style={{ fontWeight:"bold"}}>
       <td>{props.info.trade_id}</td>
       <td>{props.info.trade_settlement_date}</td>
       <td>{props.info.trade_date}</td>
