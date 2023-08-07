@@ -70,7 +70,7 @@ const Navigation = (props) => {
                 {/* add the second button ( Go back to Main Page ) only if we are not in the main page */}
                 {activeUrl !== "/allBonds" ? (
                   <Button
-                    id="back_button"
+                    class="back_btn"
                     onClick={() => {
                       navigate("/allBonds", { state : { email : props.email }});
                     }}

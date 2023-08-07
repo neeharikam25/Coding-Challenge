@@ -29,12 +29,27 @@ const AllTrades = () => {
   return (
     <>
       <Navigation email={state.email}  />
-      <h1> See trades</h1>
+      <h4 class='trades-header'> Trades Detail</h4>
       <div className="list-bonds">
         <div className="bonds-center">
           <Row className="bond-column">
             {trades.length > 0 ? (
               <>
+              <table class='styled-table'>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>trade settlement date</th>
+                        <th>trade date</th>
+                        <th>status</th>
+                        <th>currency</th>
+                        <th>unit price</th>
+                        <th>type</th>
+                        <th>quantity</th>
+                        <th>counter party</th>
+                    </tr>
+                </thead>
+              </table>
                 {trades.map((trade) => (
                   <div className="container" key={trade.trade_id}>
                     <TradeDetails info={trade} isin={state.isin} book={state.book} />
