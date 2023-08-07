@@ -11,12 +11,15 @@ import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import { differenceInDays } from "date-fns";
 import { Button } from "@mui/material";
+import Navigation from "./Navigation";
+
 
 const AllBonds = () => {
   const [bonds, setBonds] = useState([]);
   const [firstChange, setFirstChange] = useState(false);
 
   const [items, setItems] = useState([]);
+
 
   const [uid, setUid] = useState('');
   const { state } = useLocation();
@@ -54,6 +57,7 @@ const AllBonds = () => {
 
   return (
     <>
+      <Navigation email = {state.email }/>
       <DatePicker
         label="Bond maturity date"
         onChange={(newValue) => {
@@ -75,32 +79,51 @@ const AllBonds = () => {
           <th scope="col">#</th>
           <th scope="col" colspan="3">Maturity date</th>
 
+
         </tr>
       </thead>
       <tbody>
         {bonds.length > 0 ? (
-          bonds.map((bond, index) => (
+<>{
+          bonds.map((bond, index) => {
+if (
+                    firstChange === false ||
+                    (differenceInDays(new Date(bond.bondMaturityDate), value) <=
+                      5 &&
+                      differenceInDays(
+                        new Date(bond.bondMaturityDate),
+                        value
+                      ) >= 0) ||
+                    (differenceInDays(new Date(bond.bondMaturityDate), value) >=
+                      -5 &&
+                      differenceInDays(
+                        new Date(bond.bondMaturityDate),
+                        value
+                      ) <= 0)
+                  )
+return (
             <tr key={bond.securityId}>
               <th scope="row" style={{width: "100px", height: "200px;"}}>Bond {bond.securityId}</th>
               <td>{bond.bondMaturityDate}</td>
               <td>{bond.last}</td>
               <td className="container_new">
-                <BondDetails info={bond} />
+                <BondDetails info={bond} email={state.email}/>
               </td>
             </tr>
-          ))
+          );})}</>
         ) : (
+<>
           <tr>
             <td colSpan="4">
               <h1>Sorry, you have no bonds</h1>
             </td>
           </tr>
+</>
         )}
       </tbody>
     </table>
     </>
-  );
-};
+)}
 
 export default AllBonds;
 
