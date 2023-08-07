@@ -37,7 +37,7 @@ const AllTrades = () => {
               <>
                 {trades.map((trade) => (
                   <div className="container" key={trade.trade_id}>
-                    <TradeDetails info={trade} />
+                    <TradeDetails info={trade} isin={state.isin} book={state.book} />
                   </div>
                 ))}
               </>
