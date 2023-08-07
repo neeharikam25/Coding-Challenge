@@ -5,7 +5,7 @@ import { useState,useEffect } from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { getAllBonds } from '../services/BondServices'
-import { Navigate,useNavigate } from 'react-router-dom';
+import { Navigate,useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -13,7 +13,11 @@ import { Link } from 'react-router-dom';
 const BondDetails = (props ) => {
 
 
-  const [ok,setOk]=useState(false)
+  const [ok, setOk] = useState(false)
+  
+  const email_string =  props.email;
+  
+
 
   const showMore=()=>
   {
@@ -51,7 +55,7 @@ const navigate=useNavigate();
         id='btnn'
         onClick={() => {
           // Navigate to '/seeTrades' with the 'securityId' as a parameter
-          navigate('/seeTrades', { state: { securityId: props.info.securityId } });
+          navigate('/seeTrades', { state: { securityId: props.info.securityId, email: email_string } });
         }}
       >
         Show trades

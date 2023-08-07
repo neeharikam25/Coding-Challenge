@@ -1,51 +1,54 @@
-import React from 'react'
-import TradeDetails from './TradeDetails'
-import Row from 'react-bootstrap/Row'
-import { useState, useEffect} from 'react'
-import { getAllTrades } from '../services/TradeServices'
-import { Link, useNavigate,useLocation,useParams } from 'react-router-dom';
+import React from "react";
+import TradeDetails from "./TradeDetails";
+import Row from "react-bootstrap/Row";
+import { useState, useEffect } from "react";
+import { getAllTrades } from "../services/TradeServices";
+import { Link, useNavigate, useLocation, useParams } from "react-router-dom";
+import  Navigation  from "./Navigation";
 
 const AllTrades = () => {
+  const { state } = useLocation();
 
-const { state } = useLocation();
-const [trades,setTrades] = useState([]);
 
-useEffect(()=>{
-  getTradesFromAPI();}, 
-  []
-);
+  const [trades, setTrades] = useState([]);
 
-const getTradesFromAPI = ()=>{
-  getAllTrades(state.securityId)
-  .then(res => {
-      setTrades(res.data);
-  })
-  .catch(err => {
-      setTrades([]);
-      console.log(err);
-  })
-}
-        return (
-          <>
-          <h1> See trades</h1>
-          <div className='list-bonds'>
-           <div className='bonds-center'>
-            <Row className='bond-column'>
-              {trades.length>0?
-              <>{trades.map(trade => (
-                  <div className='container' key={trade.trade_id}>
-                    <TradeDetails info={trade}  />
+  useEffect(() => {
+    getTradesFromAPI();
+  }, []);
+
+  const getTradesFromAPI = () => {
+    getAllTrades(state.securityId)
+      .then((res) => {
+        setTrades(res.data);
+      })
+      .catch((err) => {
+        setTrades([]);
+        console.log(err);
+      });
+  };
+  return (
+    <>
+      <Navigation email={state.email}  />
+      <h1> See trades</h1>
+      <div className="list-bonds">
+        <div className="bonds-center">
+          <Row className="bond-column">
+            {trades.length > 0 ? (
+              <>
+                {trades.map((trade) => (
+                  <div className="container" key={trade.trade_id}>
+                    <TradeDetails info={trade} />
                   </div>
-                ))}</>:
-                <>{<h1>There are no trades in this bond</h1>}</>
-              }
-            </Row>
-      </div>
+                ))}
+              </>
+            ) : (
+              <>{<h1>There are no trades in this bond</h1>}</>
+            )}
+          </Row>
+        </div>
       </div>
     </>
-  )
+  );
+};
 
-
-    }
-
-export default AllTrades
+export default AllTrades;
