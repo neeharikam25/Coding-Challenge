@@ -11,6 +11,8 @@ import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import { differenceInDays } from "date-fns";
 import { Button } from "@mui/material";
+import Navigation from "./Navigation";
+
 
 const AllBonds = () => {
   const [bonds, setBonds] = useState([]);
@@ -18,8 +20,13 @@ const AllBonds = () => {
 
   const [items, setItems] = useState([]);
  
-const [uid,setUid]=useState('');
-const { state } = useLocation();
+  const [uid, setUid] = useState('');
+  
+
+  
+  const { state } = useLocation();
+  //console.log("STATE "  + state.email);
+
 const [email,setEmail]=useState('')
 useEffect(() => {
   setItems(JSON.parse(localStorage.getItem('email')));
@@ -54,6 +61,7 @@ useEffect(() => {
 
   return (
     <>
+      <Navigation email = {state.email }/>
       <DatePicker
         label="Bond maturity date"
         onChange={(newValue) => {
@@ -73,30 +81,42 @@ useEffect(() => {
       <div className="list-bonds">
         <div className="bonds-center">
           <Row className="bond-column">
-            {bonds.length>0?
-            <>{bonds.map((bond) => {
-              if (
-                firstChange === false ||
-                (differenceInDays(new Date(bond.bondMaturityDate), value) <=
-                  5 &&
-                  differenceInDays(new Date(bond.bondMaturityDate), value) >=
-                    0) ||
-                (differenceInDays(new Date(bond.bondMaturityDate), value) >=
-                  -5 &&
-                  differenceInDays(new Date(bond.bondMaturityDate), value) <= 0)
-              )
-                return (
-                  <div className="container" key={bond.securityId}>
-                    <BondDetails info={bond} />
-                    {console.log(
-                      differenceInDays(new Date(bond.bondMaturityDate), value)
-                    )}
-                  </div>
-                );
+            {bonds.length > 0 ? (
+              <>
+                {bonds.map((bond) => {
+                  if (
+                    firstChange === false ||
+                    (differenceInDays(new Date(bond.bondMaturityDate), value) <=
+                      5 &&
+                      differenceInDays(
+                        new Date(bond.bondMaturityDate),
+                        value
+                      ) >= 0) ||
+                    (differenceInDays(new Date(bond.bondMaturityDate), value) >=
+                      -5 &&
+                      differenceInDays(
+                        new Date(bond.bondMaturityDate),
+                        value
+                      ) <= 0)
+                  )
+                    return (
+                      <div className="container" key={bond.securityId}>
+                        <BondDetails info={bond} email={state.email}   />
+                        {console.log(
+                          differenceInDays(
+                            new Date(bond.bondMaturityDate),
+                            value
+                          )
+                        )}
+                      </div>
+                    );
 
-              return <div key={bond.securityId}></div>;
-})}</> : 
-<>{<h1>Sorry you have no bonds</h1>}</>} 
+                  return <div key={bond.securityId}></div>;
+                })}
+              </>
+            ) : (
+              <>{<h1>Sorry you have no bonds</h1>}</>
+            )}
           </Row>
         </div>
       </div>

@@ -10,9 +10,14 @@ import Button from "react-bootstrap/Button";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Navigation = () => {
+const Navigation = (props) => {
   const [activeUrl, setActiveUrl] = useState("");
   const [items, setItems] = useState([]);
+
+  
+
+
+
   // useEffect(() => {
   //   if (activeUrl !== "/") {
   //     setItems(JSON.parse(localStorage.getItem("email")));
@@ -48,7 +53,7 @@ const Navigation = () => {
         <>
           <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
-              <Navbar.Text href="/">Hello, {items}!</Navbar.Text>
+              <Navbar.Text href="/">Hello, {props.email}!</Navbar.Text>
 
               <Navbar.Brand>My Bonds App</Navbar.Brand>
 
@@ -67,7 +72,7 @@ const Navigation = () => {
                   <Button
                     id="back_button"
                     onClick={() => {
-                      navigate("/allBonds", { state: { email: items } });
+                      navigate("/allBonds", { state : { email : props.email }});
                     }}
                   >
                     {" "}
