@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -22,9 +23,9 @@ public class Trade
 
     private float unit_price;
 
-    private Date trade_settlement_date;
+    private LocalDate trade_settlement_date;
 
-    private Date trade_date;
+    private LocalDate trade_date;
     private int security_id;
 
     private int counterparty_id;
@@ -85,20 +86,20 @@ public class Trade
     }
 
     @Column(name = "trade_settlement_date", nullable = false)
-    public Date getTrade_settlement_date() {
+    public LocalDate getTrade_settlement_date() {
         return trade_settlement_date;
     }
 
-    public void setTrade_settlement_date(Date trade_settlement_date) {
+    public void setTrade_settlement_date(LocalDate trade_settlement_date) {
         this.trade_settlement_date = trade_settlement_date;
     }
 
     @Column(name = "trade_date", nullable = false)
-    public Date getTrade_date() {
+    public LocalDate getTrade_date() {
         return trade_date;
     }
 
-    public void setTrade_date(Date trade_date) {
+    public void setTrade_date(LocalDate trade_date) {
         this.trade_date = trade_date;
     }
 

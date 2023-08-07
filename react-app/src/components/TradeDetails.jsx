@@ -33,7 +33,10 @@ const TradeDetails = (props ) => {
   }
 getCPFromAPI(props.info.counterparty_id);
   return (
-    <table className='styled-table'>
+    <div className="list-bonds">
+        <div className="bonds-center">
+          <Row className="bond-column">
+          <table className='styled-table'>
     <tbody>
         <tr>
             <td>{props.info.trade_id}</td>
@@ -48,6 +51,11 @@ getCPFromAPI(props.info.counterparty_id);
         </tr>
     </tbody>
   </table>
+
+          </Row>
+          </div>
+          </div>
+    
   );
 }
 
