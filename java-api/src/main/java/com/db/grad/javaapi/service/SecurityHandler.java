@@ -29,6 +29,11 @@ public class SecurityHandler {
         return securityRepo.findAll();
     }
 
+    public long getNoOfSecurity()
+    {
+        return securityRepo.count();
+    }
+
     public Security updateSecurityDetails(Security securityToUpdate) {
         return securityRepo.save(securityToUpdate);
     }
@@ -57,5 +62,4 @@ public class SecurityHandler {
 
         return result;
     }
-
 }
