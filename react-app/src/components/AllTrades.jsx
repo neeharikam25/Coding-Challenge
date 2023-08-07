@@ -8,6 +8,19 @@ import Navigation from "./Navigation";
 import FakeTradeDetails from "./FakeTradeDetails";
 
 const AllTrades = () => {
+
+  const fakeTradeDetails = {
+    trade_id: "id",
+    trade_settlement_date: "trade settlement date",
+    trade_date: "trade date",
+    status: "status",
+    currency: "currency",
+    unit_price: "unit price",
+    type: "type",
+    quantity: "quantity",
+    counterparty: "counterparty",
+  };
+
   const { state } = useLocation();
 
 
