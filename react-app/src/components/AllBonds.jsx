@@ -84,7 +84,7 @@ const AllBonds = () => {
               <th scope="row" style={{width: "100px", height: "200px;"}}>Bond {bond.securityId}</th>
               <td>{bond.bondMaturityDate}</td>
               <td>{bond.last}</td>
-              <td className="container">
+              <td className="container_new">
                 <BondDetails info={bond} />
               </td>
             </tr>

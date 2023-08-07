@@ -50,7 +50,7 @@
   background-color:#0a0a23;
   border: 2px solid #d8e4d4;
   color: #fff;
-
+  padding: 0;
 }
 
 #buttons a, #buttons button {
@@ -331,4 +331,44 @@ body {
 .collapsed {
   height: 150px;
   overflow: hidden;
+}
+
+#cardBondDetails {
+  background-color: #100d0d;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.category-bold {
+  font-weight: bold;
+}
+
+.btn-show-more {
+  background-color: #6e8398;
+  color: #fff;
+}
+
+.btn-show-less {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-show-trades {
+  background-color: #506b56;
+  color: #fff;
+}
+.text-right{
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container_new{
+  min-width: 450px;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: auto;
+
 }
