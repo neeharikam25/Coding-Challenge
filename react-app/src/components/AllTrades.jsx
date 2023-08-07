@@ -47,7 +47,7 @@ const AllTrades = () => {
       <Navigation email={state.email} />
       <h4 class="trades-header"> Trades Detail</h4>
       <div className="list-bonds">
-        <div className="bonds-center">
+        <div className="trades-center">
           <Row className="bond-column">
             {trades.length > 0 ? (
               <>

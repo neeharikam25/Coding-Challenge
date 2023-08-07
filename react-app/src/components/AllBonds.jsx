@@ -6,7 +6,7 @@ import { useState, useEffect} from 'react'
 import { Link, useNavigate,useLocation,useParams } from 'react-router-dom';
 import { getAllBonds } from '../services/BondServices'
 import {getUserId} from '../services/UserServices'
-import {auth} from '../config/firebase' 
+import {auth} from '../config/firebase'
 import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import { differenceInDays } from "date-fns";
@@ -19,15 +19,12 @@ const AllBonds = () => {
   const [firstChange, setFirstChange] = useState(false);
 
   const [items, setItems] = useState([]);
- 
+
   const [uid, setUid] = useState('');
-  
 
-  
   const { state } = useLocation();
-  //console.log("STATE "  + state.email);
 
-const [email,setEmail]=useState('')
+  const [email,setEmail]=useState('')
 useEffect(() => {
   setItems(JSON.parse(localStorage.getItem('email')));
 
@@ -78,13 +75,20 @@ useEffect(() => {
         See all Bonds!{" "}
       </Button>
 
-      <div className="list-bonds">
-        <div className="bonds-center">
-          <Row className="bond-column">
-            {bonds.length > 0 ? (
-              <>
-                {bonds.map((bond) => {
-                  if (
+      <table className="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Bond ID</th>
+          <th scope="col" colspan="3">Maturity date</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        {bonds.length > 0 ? (
+<>{
+          bonds.map((bond, index) => {
+if (
                     firstChange === false ||
                     (differenceInDays(new Date(bond.bondMaturityDate), value) <=
                       5 &&
@@ -99,30 +103,31 @@ useEffect(() => {
                         value
                       ) <= 0)
                   )
-                    return (
-                      <div className="container" key={bond.securityId}>
-                        <BondDetails info={bond} email={state.email}   />
-                        {console.log(
-                          differenceInDays(
-                            new Date(bond.bondMaturityDate),
-                            value
-                          )
-                        )}
-                      </div>
-                    );
-
-                  return <div key={bond.securityId}></div>;
-                })}
-              </>
-            ) : (
-              <>{<h1>Sorry you have no bonds</h1>}</>
-            )}
-          </Row>
-        </div>
-      </div>
+return (
+            <tr key={bond.securityId}>
+              <th scope="row" style={{width: "100px", height: "200px;"}}>{bond.securityId}</th>
+              <td>{bond.bondMaturityDate}</td>
+              <td>{bond.last}</td>
+              <td className="container_new">
+                <BondDetails info={bond} email={state.email}/>
+              </td>
+            </tr>
+          );})}</>
+        ) : (
+<>
+          <tr>
+            <td colSpan="4">
+              <h1>Sorry, you have no bonds</h1>
+            </td>
+          </tr>
+</>
+        )}
+      </tbody>
+    </table>
     </>
-  );
-};
+)}
+
+
 
 export default AllBonds;
 
